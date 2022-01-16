@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Shopify Backend Developer Intern Challenge - Summer 2022 ####
 
-Things you may want to cover:
+#### Optional feature chosen #### 
+* Ability to create warehouses/locations and assign inventory to specific locations
 
-* Ruby version
 
-* System dependencies
+### System dependencies ###
+* Ruby (v3.0.0)+
+* SQlite3
+* Node.js
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Deployment Instructions ###
+* clone the repo
+* navigate to root folder and run bin/rails db:reset
+* Run bin/rails server and visit localhost:3000 to visit app
