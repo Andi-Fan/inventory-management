@@ -1,0 +1,26 @@
+
+<h1>Warehouses</h1>
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Location</th>
+      <th scope="col">Postal Code</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @warehouses.each do |warehouse| %>
+      <tr>
+      <th scope="row"><%= link_to warehouse.id, warehouse %></th>
+      <td><%= warehouse.location %></td>
+      <td><%= warehouse.postal_code %></td>
+      <td><%= warehouse.created_at %></td>
+      <td><%= warehouse.updated_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add New Warehouse Location", new_warehouse_path, class:"btn btn-outline-primary" %>

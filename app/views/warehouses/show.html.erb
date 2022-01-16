@@ -1,0 +1,43 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @warehouse.created_at %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Warehouse Id</h6>
+    <p class="card-text"><%= @warehouse.id %></p>
+    <h6 class="card-subtitle mb-2 text-muted">Location</h6>
+    <p class="card-text"><%= @warehouse.location %></p>
+    <h6 class="card-subtitle mb-2 text-muted">Postal Code</h6>
+    <p class="card-text"><%= @warehouse.postal_code %></p>
+    <%= link_to "Edit", edit_warehouse_path(@warehouse), class:"btn btn-primary" %>
+    <%= link_to "Destroy", warehouse_path(@warehouse), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }, class:"btn btn-primary" 
+    %>
+  </div>
+</div>
+
+<h1>Products</h1>
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+      <th scope="row"><%= product.id %></th>
+      <td><%= link_to product.name, product %></td>
+      <td><%= product.brand %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.price %></td>
+      <td><%= product.description %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

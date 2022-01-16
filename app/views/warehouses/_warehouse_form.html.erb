@@ -1,0 +1,35 @@
+<%= form_with model: warehouse do |form| %>
+  <br>
+  <div class="form-group">
+    <%= form.label :location %><br>
+    <%= form.text_field :location, class:"form-control" %>
+    <% warehouse.errors.full_messages_for(:location).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+  <div class="form-group">
+    <%= form.label :postal_code %><br>
+    <%= form.text_area :postal_code, class:"form-control" %>
+    <% warehouse.errors.full_messages_for(:postal_code).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+  <div class="form-group">
+  <% if @selected_products %>
+      <%= form.label :products %><br>
+      <%= form.text_field :productIds, class:"form-control", placeholder: "Enter product ids seperated by a semicolon eg: (1;2;3)", value: @selected_products %>
+  <% else %>
+      <%= form.label :productIds %><br>
+      <%= form.text_field :productIds, class:"form-control", placeholder: "Enter product ids seperated by a semicolon eg: (1;2;3)" %>
+  <% end %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.submit class:"btn btn-outline-primary" %>
+  </div>
+<% end %>
