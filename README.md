@@ -9,7 +9,7 @@
 ### System dependencies ###
 * Ruby (v3.0.0)+
 * SQlite3
-* Node.js
+* Node.js (v8.16.0)+
 * Yarn
 * Rails 
 
